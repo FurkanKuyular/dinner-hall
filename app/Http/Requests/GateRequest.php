@@ -22,12 +22,26 @@ class GateRequest extends FormRequest
                 'required',
                 'gte:0'
             ],
-            'order_id' => 'required',
-            'user_id' => 'required',
-            'ref_code' => 'required',
+            'order_id' => [
+                'required',
+                'max:10',
+                'min:10',
+            ],
+            'user_id' => [
+                'required',
+                'max:36',
+                'min:36',
+            ],
+            'ref_code' => [
+                'required',
+                'max:10',
+                'min:10',
+            ],
             'callback_success_url' => 'required',
             'callback_fail_url' => 'required',
             'hash' => [
+                'max:40',
+                'min:40',
                 function (string $attr, mixed $value, \Closure $fail) {
                     $hashedString = str()->createHash(
                         ...$this->collect(['callback_fail_url', 'callback_success_url', 'price',])
