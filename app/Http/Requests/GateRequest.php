@@ -44,7 +44,7 @@ class GateRequest extends FormRequest
                 'min:40',
                 function (string $attr, mixed $value, \Closure $fail) {
                     $hashedString = str()->createHash(
-                        ...$this->collect(['callback_fail_url', 'callback_success_url', 'price',])
+                        ...$this->collect(['callback_fail_url', 'callback_success_url', 'price'])
                             ->prepend(config('callback.salt'))
                             ->values()
                     );

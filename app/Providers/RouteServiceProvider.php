@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Http\Requests\GateRequest;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Http\Request;
@@ -29,6 +30,16 @@ class RouteServiceProvider extends ServiceProvider
         });
 
         RateLimiter::for('gates', function (Request $request) {
+            $request->validate((new GateRequest(
+                $request->query->all(),
+                $request->request->all(),
+                $request->attributes->all(),
+                $request->cookies->all(),
+                $request->files->all(),
+                $request->server->all(),
+                $request->getContent(),
+            ))->rules());
+
             return [
                 Limit::perDay(50)->by($request->ip()),
                 Limit::perDay(2)->by($request->get('user_id')),
