@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('callback_success_url');
             $table->string('callback_fail_url');
             $table->string('hash', 40);
+            $table->boolean('is_success');
             $table->timestamps();
         });
     }

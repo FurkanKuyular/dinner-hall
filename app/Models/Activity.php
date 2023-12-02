@@ -15,5 +15,6 @@ class Activity extends Model
         'callback_success_url',
         'callback_fail_url',
         'hash',
+        'is_success',
     ];
 }

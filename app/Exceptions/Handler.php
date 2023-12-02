@@ -2,6 +2,7 @@
 
 namespace App\Exceptions;
 
+use App\Events\GateFailed;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Http\Exceptions\ThrottleRequestsException;
 use Illuminate\Http\JsonResponse;
@@ -57,7 +58,7 @@ class Handler extends ExceptionHandler
 
     private function getThrottleRequestException(ThrottleRequestsException $e): JsonResponse
     {
-        //TODO dispatch event with stuck request
+        GateFailed::dispatch();
 
         return response()->json(null, Response::HTTP_TOO_MANY_REQUESTS, $e->getHeaders());
     }
