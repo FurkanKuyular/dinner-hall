@@ -1,10 +1,10 @@
-# Proje Adı
+# Dinner Hall
 
-Bu proje XYZ amacıyla geliştirilmiştir. Aşağıdaki adımları takip ederek projeyi başlatabilirsiniz.
+Bu proje bir yemek salonu'nun turnikileri'nin kontrolü amacıyla geliştirilmiştir.
+
+Aşağıdaki adımları takip ederek projeyi başlatabilirsiniz.
 
 ## Başlangıç
-
-Projeyi çalıştırmak için aşağıdaki adımları izleyin.
 
 ### Önkoşullar
 
@@ -16,7 +16,7 @@ Projeyi çalıştırmak için aşağıdaki adımları izleyin.
 1. Projeyi klonlayın:
 
    ```sh
-   git clone https://github.com/kullanici/proje.git
+   git clone https://github.com/FurkanKuyular/dinner-hall.git
 2. Composer ile gerekli bağımlılıkları yükleyin:
     ```sh
    composer install
