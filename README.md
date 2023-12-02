@@ -39,7 +39,7 @@ Aşağıdaki adımları takip ederek projeyi başlatabilirsiniz.
 Proje için case içerisinde sunulan Postman Collection dosyasını kullanarak API'yi test etmek için aşağıdaki adımları izleyin:
 
 1. `sail up` komutu çalıştırıldıktan sonra, proje belirtilen bir port üzerinde çalışmaya başlayacaktır. `Default:8009`
-2. Collection içinde bulunan gates endpoint'ini kullanarak, 127.0.0.1:{PORT}/gates adresine istek yapın.
+2. Collection içinde bulunan gates endpoint'ini kullanarak, 127.0.0.1:{PORT}/api/gates adresine istek yapın.
 
 Bu adımları takip ederek projeyi başarıyla çalıştırabilir ve test edebilirsiniz.
 
